@@ -40,52 +40,83 @@
     <hr>
     <div class="content">
       <!-- Registration form -->
-      <form action="index.html">
-        <div class="user-details">
-          <!-- Input box for full name -->
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
-          </div>
-          <!-- Input box for username -->
-          <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
-          </div>
-          <!-- Input box for email -->
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
-          <!-- Input box for password -->
-          <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
-          </div>
-          <!-- Input box for confirming password -->
-          <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
-          </div>
-          <!-- Input box for date of birth -->
-          <div class="input-box">
-            <span class="details">Date of birth</span>
-            <input type="date" name="dob" required>
-          </div>
+      <!-- Contact form -->
+    <section id="contact" class="contact-section">
+        <div class="form-container">
+            <h2>Contact Form</h2>
+            <p>Complete all fields marked with an asterisk (*).</p>
+
+            <form id="contactForm">
+                <label for="name">Full Name *</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    minlength="2"
+                    maxlength="80"
+                    pattern="[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ '\-]*"
+                    autocomplete="name"
+                    required>
+
+                <label for="email">Email Address *</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    maxlength="254"
+                    autocomplete="email"
+                    required>
+
+                <label for="phone">Phone Number *</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+27 82 123 4567"
+                    pattern="[+]?[0-9 ()-]{9,20}"
+                    minlength="9"
+                    maxlength="20"
+                    autocomplete="tel"
+                    required>
+
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select a subject</option>
+                    <option value="General Enquiry">General Enquiry</option>
+                    <option value="Support">Support</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="message">Message *</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    minlength="10"
+                    maxlength="2000"
+                    placeholder="Write your message here..."
+                    required></textarea>
+
+                <button type="submit" id="submitBtn">
+                    Send Message
+                </button>
+
+                <p id="formStatus" role="status" aria-live="polite"></p>
+            </form>
         </div>
-        <!-- Button container -->
-        <div class="button-container">
-          <div class="button">
-            <!-- Submit button -->
-            <input type="submit" value="Register">
-            <input type="reset" value="Clear">
-          </div>
-        </div>
-      </form>
+    </section>
+
+    <!-- Map section -->
+    <section id="location" class="location-section">
+        <h2>Find Our Location</h2>
+        <p>Visit us in Johannesburg, South Africa.</p>
     </div>
   </div>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.1860803702816!2d27.8681502!3d-26.287386599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a650595414b9%3A0x8605644bec0597fb!2s4914%20Vike%20St%2C%20Chiawelo%2C%20Soweto%2C%201818!5e1!3m2!1sen!2sza!4v1786696181878!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-     
+  <script src="gsrcipt.js"> </script>   
 </main>
 
     <!-- Footer -->
