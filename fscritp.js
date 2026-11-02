@@ -74,7 +74,7 @@ contactForm.addEventListener("submit", async function (event) {
         if (
             response.ok &&
             (
-                result.success === true ||
+                result.success === "true" ||
                 result.success === "true"
             )
         ) {
