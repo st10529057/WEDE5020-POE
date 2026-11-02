@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simple Responsive Website</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header and Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/logo.jpg" style="width:85px;height:95px;"></a>
+
+            <nav class="navigation" aria-label="Main navigation">
+                <ul>
+                <a href = "index.html">Home page|</a>
+                <a href = "about.html">About Us|</a>
+                <a href = "gallery.html">Gallery|</a>
+                <a href = "events.html">Events|</a>
+                <a href = "contact.html">Contact us</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+            <h1><u><i>Gallery page</i></u></h1>
+<br/>
+<br/>
+  <h2>My Image Gallery</h2>
+<br/>
+  <!-- 1. Thumbnail Gallery -->
+  <div class="gallery-grid" id="gallery">
+    <!-- Using high-quality placeholder images -->
+    <div class="gallery-item"><img src="images/h.jpg" alt="Beautiful Mountains" data-index="0"></div>
+    <div class="gallery-item"><img src="images/b.jpg" alt="Clean Desktop Setup" data-index="1"></div>
+    <div class="gallery-item"><img src="images/dd.webp" alt="Key Elements of a Machine" data-index="2"></div>
+    <div class="gallery-item"><img src="images/c.jpg" alt="Stunning Cats" data-index="3"></div>
+    <div class="gallery-item"><img src="images/f.jpg" alt="Urban Architecture" data-index="4"></div>
+  </div>
+
+  <!-- 2. Lightbox Modal Elements -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <span class="nav-btn prev" id="prevBtn">&#10094;</span>
+      
+      <img id="lightboxImg" src="" alt="">
+      <div class="caption" id="captionText"></div>
+      
+      <span class="nav-btn next" id="nextBtn">&#10095;</span>
+    </div>
+  </div>
+
+
+           
+
+<script>
+       // Grab key DOM elements
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const captionText = document.getElementById('captionText');
+    const closeBtn = document.getElementById('closeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Create an array tracking all images from our markup
+    const images = Array.from(gallery.querySelectorAll('img'));
+    let currentIndex = 0;
+
+    // Open Lightbox when clicking a thumbnail
+    gallery.addEventListener('click', (e) => {
+      if (e.target.tagName === 'IMG') {
+        currentIndex = parseInt(e.target.getAttribute('data-index'), 10);
+        updateLightbox();
+        lightbox.style.display = 'flex';
+      }
+    });
+
+    // Close Lightbox
+    const closeLightbox = () => {
+      lightbox.style.display = 'none';
+    };
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close Lightbox when clicking outside the active image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Slideshow Navigation Logic
+    const showNextImage = () => {
+      currentIndex = (currentIndex + 1) % images.length; // Loops back to 0 at the end
+      updateLightbox();
+    };
+
+    const showPrevImage = () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length; // Loops back to 4 if below 0
+      updateLightbox();
+    };
+
+    nextBtn.addEventListener('click', showNextImage);
+    prevBtn.addEventListener('click', showPrevImage);
+
+    // Update image path and text inside the modal
+    function updateLightbox() {
+      const activeImage = images[currentIndex];
+      lightboxImg.src = activeImage.src;
+      lightboxImg.alt = activeImage.alt;
+      captionText.textContent = activeImage.alt;
+    }
+
+    // Optional: Add keyboard controls for seamless navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowRight') showNextImage();
+        if (e.key === 'ArrowLeft') showPrevImage();
+        if (e.key === 'Escape') closeLightbox();
+      }
+    });
+</script>
+<br/>
+<br/>
+
+<br/>
+<br/>
+
+ </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; ST10529057 2026 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+        
+
