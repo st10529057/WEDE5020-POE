@@ -228,7 +228,7 @@ footer {
 
 /*Responsive Design*/
 
-/*Tablets*/
+/*Tablets*/ 
 @media (max-width: 768px){
     .hero-grid{
         grid-template-columns:1fr;
