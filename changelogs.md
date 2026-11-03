@@ -16,5 +16,5 @@ W3Schools is Powered by W3.CSS. [online]. Available at: https://www.w3schools.co
 What Is CSS? | Coursera [WWW Document], n.d. URL https://www.coursera.org/articles/css (accessed 11.3.26).
 
 (“HTML - Images,” n.d.)
-HTML - Images [WWW Document], n.d. URL https://www.tutorialspoint.com/html/html_images.htm (accessed 11.3.26).
+HTML - Images [WWW Document], n.d. URL https://www.tutorialspoint.com/html/html_images.htm (accessed 11.3.26). 
 
