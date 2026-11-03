@@ -12,5 +12,5 @@ W3Schools is Powered by W3.CSS. [online]. Available at: https://www.w3schools.co
 
 (“Cascading Style Sheets,” n.d.) Cascading Style Sheets [WWW Document], n.d. URL https://www.w3.org/Style/CSS/Overview.en.html (accessed 11.3.26).
 
-(“What Is CSS? | Coursera,” n.d.)
+(“What Is CSS? | Coursera,” n.d.) 
 What Is CSS? | Coursera [WWW Document], n.d. URL https://www.coursera.org/articles/css (accessed 11.3.26).
